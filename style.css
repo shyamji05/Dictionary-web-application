@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root{
+    /*Light Mode*/
+    --p-light-mode: #d9c68c;
+    --s-light-mode: #f2ecd9;
+    --t-light-mode: #393013;
+    --i-light-mode: #bab6ab;
+    --e-light-mode: #c73030;
+    --bt-light-mode: #d9c68c;
+    --bt-alt-light-mode: #212529;
+    /*Dark Mode*/
+    --p-dark-mode: #212529;
+    --s-dark-mode: #495057;
+    --t-dark-mode: #ced4da;
+    --i-dark-mode: #ced4da9a;
+    --e-dark-mode: #b54f4f;
+    --bt-dark-mode: #212529;
+    --bt-alt-dark-mode: #d9c68c;
+    /*Main Variables*/
+    --primary-color: #d9c68c;
+    --secondary-color: #f2ecd9;
+    --text-color: #393013;
+    --indent-color: #bab6ab;
+    --error-color: #c73030;
+    --button-color: #d9c68c;
+    --button-color-alt: #212529;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*, button{
+    transition: background-color 600ms ease-in-out;
+    transition: color 600ms ease-in-out;
+}
+html{
+    font-family: 'Poppins', sans-serif;
+    font-size: 100%;
+    
+}
+body{
+    background-color: var(--primary-color);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.nav{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 0.4rem 1rem;
+}
+
+.nav h1{
+    font-size: 2rem;
+    color: var(--text-color);
+}
+.dark-mode-btn{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+    border: none;
+    background-color: var(--button-color);
+    opacity: 1;
+    transition: opacity 600ms ease-in-out;
+}
+.dark-mode-btn:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    background-color: var(--button-color-alt);
+}
+main{
+    flex: 15;
+    display: grid;
+    place-items: center;
+}
+.container{
+    margin-top: 1rem;
+    background-color: var(--secondary-color);
+    width: clamp(350px,50%,1400px);
+    padding: 3.5rem 1.8rem;
+    border-radius: 0.625rem;
+    box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+}
+.container .search-box{
+    display: flex;
+    justify-content: space-between;
+}
+.search-box input{
+    font-family: inherit;
+    width: 70%;
+    padding: 10px 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+.search-box input:focus{
+    border-bottom: 1px solid var(--text-color);
+}
+.search-box button{
+    width: 25%;
+    padding: 10px 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    opacity: 1;
+    transition: opacity 600ms ease-in-out;
+}
+.search-box button:hover{
+    cursor: pointer;
+    opacity: 0.90;
+    border-bottom: 1px solid var(--text-color);
+}
+.search-box input, .search-box button{
+    border-bottom: 1px solid var(--primary-color);
+    transition: border-bottom 600ms ease-in-out;
+}
+.result .word{
+    display: flex;
+    justify-content: space-between;
+}
+.result .word h3{
+    font-size: 1.7rem;
+    color: var(--text-color);
+}
+.result .word button{
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border: none;
+    outline: none;
+    opacity: 1;
+    transition: opacity 600ms ease-in-out;
+}
+.result .word button:hover{
+    cursor: pointer;
+    opacity: 0.90;
+    color: var(--text-color);
+}
+.result .detail{
+    display: flex;
+    gap: 0.625rem;
+    margin: 0.3125rem 0 1.25rem 0;
+    color: var(--indent-color);
+    font-size: 0.875rem;
+}
+.result .word-meaning{
+    text-align: justify;
+    color: var(--text-color);
+}
+.result .word-example{
+    margin-top: 2rem;
+    padding-left: 1.25rem;
+    border-left: 5px solid var(--text-color);
+    text-align: justify;
+    font-style: italic;
+    color: var(--text-color);
+}
+.error{
+    color: var(--error-color);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    text-align: center;
+}
